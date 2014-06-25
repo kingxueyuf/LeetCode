@@ -13,8 +13,18 @@ public class Solution {
     }
 
     private TreeNode recursion(TreeNode node){
+    	if(node == null)
+    		return null;
     	TreeNode tmpRight = node.right;
-    	
+    	tmpRight = recursion(tmpRight);
+    	node.right = recursion(node.left);
+    	TreeNode pointer = node;
+    	while(pointer.right != null)
+    	{
+    		pointer = pointer.right;
+    	}
+    	pointer.right = tmpRight;
+   		return node;
     }
 }
 
