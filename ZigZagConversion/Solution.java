@@ -9,6 +9,6 @@ public class Solution {
 		}else{
 			// length/( 3*a + 1 ) <= x < length/( 3*a )
 		}
-
+		
     }
 }
