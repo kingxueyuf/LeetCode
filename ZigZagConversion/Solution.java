@@ -1,3 +1,5 @@
+package ZigZagConversion;
+
 public class Solution {
     public String convert(String s, int nRows) {
 		int yushu = nRows % 2 ;
@@ -9,6 +11,7 @@ public class Solution {
 		}else{
 			// length/( 3*a + 1 ) <= x < length/( 3*a )
 		}
+		return null;
 		
     }
 }
