@@ -11,6 +11,27 @@ package GasStation;
  */
 public class Solution {
 	public int canCompleteCircuit(int[] gas, int[] cost) {
-		
+		int[] arr = new int[gas.length];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = gas[i] - cost[i];
+		}
+		int total = 0;
+		int start = 0;
+		boolean find = true;
+		while (start < arr.length) {
+			find = true;
+			total = 0;
+			for (int i = 0; i < arr.length; i++) {
+				total += arr[(start + i) % arr.length];
+				if (total < 0) {
+					start = start + i + 1;
+					find = false;
+					break;
+				}
+			}
+			if (find)
+				return start;
+		}
+		return -1;
 	}
 }
