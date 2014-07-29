@@ -11,7 +11,7 @@ public class Solution {
 		length = num.length;
 		used = new boolean[num.length];
 		dfs(0);
-		return null;
+		return res;
 	}
 
 	int[] numArr;
@@ -26,12 +26,21 @@ public class Solution {
 		} else {
 			for (int i = 0; i < used.length; i++) {
 				if (!used[i]) {
-					if (i - 1 > -1 && numArr[i - 1] == numArr[i] && used[i - 1]) {
-
-					} else {
+					int j = i;
+					boolean toAdd = true;
+					while (j - 1 > -1 && numArr[j - 1] == numArr[j]) {
+						if (!used[j - 1]) {
+							toAdd = false;
+							break;
+						}
+						j--;
+					}
+					if (toAdd) {
 						used[i] = true;
 						tmp.add(numArr[i]);
 						dfs(num + 1);
+						used[i] = false;
+						tmp.remove(tmp.size()-1);
 					}
 				}
 			}
@@ -39,6 +48,7 @@ public class Solution {
 	}
 
 	private void addToRes(List<Integer> tmp, List<List<Integer>> res) {
-
+		ArrayList<Integer> item = new ArrayList<Integer>(tmp);
+		res.add(item);
 	}
 }
