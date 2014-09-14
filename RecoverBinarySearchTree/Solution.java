@@ -24,6 +24,8 @@ public class Solution {
 	ArrayList<Integer> list = new ArrayList<Integer>();
 
 	public void recoverTree(TreeNode root) {
+		if (root == null)
+			return;
 		// left -> root -> right
 		inorder(root);
 		int tmp = bigger.val;
@@ -39,9 +41,12 @@ public class Solution {
 		if (node == null)
 			return;
 		inorder(node.left);
-		if (node.val < list.get(list.size() - 1) && bigger == null) {
+		if (list.size() == 0) {
+
+		} else if (node.val < list.get(list.size() - 1) && bigger == null) {
 			bigger = last;
-		} else if (node.val < list.get(list.size() - 1) && smaller == null) {
+			smaller = node;
+		} else if (node.val < list.get(list.size() - 1)) {
 			smaller = node;
 		}
 		this.list.add(node.val);
