@@ -2,9 +2,10 @@ package LongestCommonPrefix;
 
 public class Solution {
 	public String longestCommonPrefix(String[] strs) {
-		if(strs == null)
+		if (strs == null)
 			return "";
-		
+		if (strs.length == 0)
+			return "";
 		String res = "";
 		for (int i = 0; i < Integer.MAX_VALUE; i++) {
 			String currentChar = null;
