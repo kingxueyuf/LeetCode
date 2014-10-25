@@ -14,8 +14,6 @@ public class Solution {
 			int k, int l) {
 		if (i > j)
 			return null;
-		if(i == j)
-			return 
 		if (k > l)
 			return null;
 		TreeNode root = new TreeNode(preorder[i]);
