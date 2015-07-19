@@ -65,3 +65,17 @@ RemoteSystemsTempFiles/.project
 .metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/segments_1
 
 *.prefs
+
+*.dat
+
+.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache
+
+*.log
+
+*.setup
+
+*.mark
+
+*.prefs
+
+*.prefs
